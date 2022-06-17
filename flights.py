@@ -5,6 +5,9 @@ import pandas as pd
 from hist import hist_tab
 
 
-data = pd.read_csv("H:\My Life\Data\VisBokeh\example\dataset\Flights.csv", index_col=0).dropna()
+data = pd.read_csv(r"H:\My Life\Data\VisBokeh\example\dataset\Flights.csv", index_col=0).dropna()
 
-hist_tab(data)
+tab_hist = hist_tab(data)
+tabs = Tabs(tabs=[tab_hist])
+curdoc().add_root(tabs)
+
